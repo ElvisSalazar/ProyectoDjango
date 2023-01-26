@@ -1,0 +1,178 @@
+<!-- Contenido heredado -->
+{% extends 'base.html' %}
+
+<!-- Carga la carpeta static -->
+{% load static %}
+
+<!-- Contiene los estilos css -->
+{% block linkcss %}
+<link rel="stylesheet" href="{% static 'app/css/stylesssss.css' %}">
+{% endblock %}
+
+<!-- Contiene el dinamismo js -->
+{% block linkjs %} 
+<script src="{% static 'app/js/jquery-3.4.1.min.js' %}"></script> 
+<script src="{% static 'app/js/main.js' %}"></script>
+{% endblock %}
+
+<!-- Contiene el titulo de la pestaña -->
+{% block title %}Ventas{% endblock %}
+
+<!-- Contenido propio de la pagina -->
+{% block content %}
+    <header>
+        <img src="{% static 'app/img/logo.svg' %}" alt="Logo Imperium Real State">
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="#" class="activo">Venta</a>
+            <a href="#">Alquiler</a>
+            <a href="/contact/">Contacto</a>
+        </nav>
+        {% if request.user.is_authenticated %}
+            <a href="signout/">Logout</a>
+        {% endif %}
+    </header>
+    <div id="burguer">
+        <div class="barra superior"></div>
+        <div class="barra media"></div>
+        <div class="barra inferior"></div>
+    </div>
+    <div class="menu">
+        <nav>
+            <a href="/">Inicio</a>
+            <hr>
+            <a href="/buy">Venta</a>
+            <hr>
+            <a href="#">Alquiler</a>
+            <hr>
+            <a href="/contact/">Contacto</a>
+        </nav>
+        <p class="copyright">&copy; ACME Inc</p>
+    </div>
+    <div class="fila grid"> <!-- Grid = rejilla -->
+        <div class="card">
+            <img src="{% static 'app/img/thumb1.jpeg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en los Altos</p>
+                    <p>2.000.000 $</p>
+                </div>
+                <a href="propiety/">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb2.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en los Altos</p>
+                    <p>2.000.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb3.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en los Altos</p>
+                    <p>2.000.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb4.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en los Altos</p>
+                    <p>2.000.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb5.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en los Altos</p>
+                    <p>2.000.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb6.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en los Altos</p>
+                    <p>2.000.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb8.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en los Altos</p>
+                    <p>5.500.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb9.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa Jazmines</p>
+                    <p>2.500.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/img/thumb10.jpg' %}" alt="Imagen de casa">
+            <div class="footer-card">
+                <div>
+                    <p>Villa en Nueva Marina</p>
+                    <p>4.000.000 $</p>
+                </div>
+                <a href="#">Más información</a>
+            </div>
+        </div>
+    </div>
+    <footer class="fila">
+        <div class="col-33">
+            <p>Imperium Real State</p>
+            <p class="flex-start">
+                <img class="m-r-small" src="{% static 'app/img/map.svg' %}" alt="Icono de mapa">
+                Paseo de la constitucion, 12
+            </p>
+            <p>29600 Marbella</p>
+            <p class="flex-start">
+                <img class="m-r-small" src="{% static 'app/img/phone.svg' %}" alt="Icono de telefono">
+                +593984404646
+            </p>
+            <p class="flex-start">
+                <img class="m-r-small" src="{% static 'app/img/mail.svg' %}" alt="Icono de email">
+                info@imperium.com
+            </p>
+        </div>
+        <div class="col-33">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12828.503732255203!2d-4.8864152383594135!3d36.5028220743429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72d809904dabdf%3A0xe6c9db907b5ecab!2zTWFyYmVsbGEsIE3DoWxhZ2EsIEVzcGHDsWE!5e0!3m2!1ses!2sec!4v1646165351619!5m2!1ses!2sec" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="col-33">
+            <div class="flex-around">
+                <img class="rrss" src="{% static 'app/img/facebook.svg' %}" alt="Icono de Facebook">
+                <img class="rrss" src="{% static 'app/img/twitter.svg' %}" alt="Icono de Twitter">
+                <img class="rrss" src="{% static 'app/img/whatsapp.svg' %}" alt="Icono de Whatsapp">
+                <img class="rrss" src="{% static 'app/img/instagram.svg' %}" alt="Icono de Instagram">
+            </div>
+            <div class="flex-around m-t">
+                <a href="contacto.html#legal">Aviso legal</a>
+                <a href="contacto.html#cookies">Politica de cookies</a>
+            </div>
+            <p class="copyright m-t">&copy; Imperium Real State All rights reserved</p>
+        </div>
+    </footer>
+{% endblock %}

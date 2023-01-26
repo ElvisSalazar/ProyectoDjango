@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+<!-- Carga la carpeta static -->
+{% load static %}
+
+<!-- Contiene los estilos css -->
+{% block linkcss %}
+    <link rel="stylesheet" href="{% static 'app/css/stylessssss.css' %}">
+{% endblock %}
+
+<!-- Contiene el dinamismo js -->
+{% block linkjs %}<script src=""></script>{% endblock %}
+
+<!-- Contiene el titulo de la pestaña -->
+{% block title %}Inicio de session{% endblock %}
+
+{% block content %}
+    <div class="hero">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="hero-logo">
+            <img src="{% static 'app/img/logo-frame.svg' %}" alt="Logo Imperial Real State">
+        </div>
+    </div>
+
+    <div class="all-content">
+        <div class="info">
+
+        </div>
+        <div class="form-content">
+            <h1 id="wel">BIENVENIDO!</h1>
+            <form id="login" action="" method="post">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="ACCEDER">
+                <div id="nuevo">
+                <a href="/registration">Eres nuevo?Registrate aqui!</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
